@@ -53,96 +53,26 @@ public class Main {
     
     // Soal 1: Integer Overflow Detection
     private static void executeSoal1(Scanner sc) {
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        
-        // Check for overflow without using long or try-catch
-        if (a > 0 && b > 0 && (Integer.MAX_VALUE - a) < b) {
-            System.out.println("OVERFLOW");
-        } else if (a < 0 && b < 0 && (Integer.MIN_VALUE - a) > b) {
-            System.out.println("OVERFLOW");
-        } else {
-            System.out.println(a + b);
-        }
+        Soal1Repository.execute(sc);
     }
     
     // Soal 2: Float vs Double Precision
     private static void executeSoal2(Scanner sc) {
-        double x = sc.nextDouble();
-        double y = sc.nextDouble();
-        
-        // Calculate using float
-        float sumFloat = (float)x + (float)y;
-        
-        // Calculate using double
-        double sumDouble = x + y;
-        
-        // Calculate absolute difference
-        double difference = Math.abs(sumFloat - sumDouble);
-        
-        // Print with 6 decimal places
-        System.out.printf("%.6f%n", difference);
+        Soal2Repository.execute(sc);
     }
     
     // Soal 3: Primitive vs Wrapper Comparison
     private static void executeSoal3(Scanner sc) {
-        int N = sc.nextInt();
-        
-        // Store N in Integer a
-        Integer a = N;
-        
-        // Copy value to Integer b
-        Integer b = a;
-        
-        // Add 1 to a (this creates a new Integer object)
-        a = a + 1;
-        
-        // Compare using ==
-        boolean refEqual = (a == b);
-        System.out.println("==: " + refEqual);
-        
-        // Compare using equals()
-        boolean valueEqual = a.equals(b);
-        System.out.println("equals: " + valueEqual);
+        Soal3Repository.execute(sc);
     }
     
     // Soal 4: String Immutability & Reference
     private static void executeSoal4(Scanner sc) {
-        String S = sc.next();
-        
-        // Create String a = S
-        String a = S;
-        
-        // Create String b = new String(S)
-        String b = new String(S);
-        
-        // Concatenate "X" to a (creates a new String)
-        a = a + "X";
-        
-        // Compare using ==
-        boolean refEqual = (a == b);
-        System.out.println("==: " + refEqual);
-        
-        // Compare using equals()
-        boolean valueEqual = a.equals(b);
-        System.out.println("equals: " + valueEqual);
+        Soal4Repository.execute(sc);
     }
     
     // Soal 5: Parsing & Type Safety
     private static void executeSoal5(Scanner sc) {
-        int intValue = sc.nextInt();
-        double doubleValue = sc.nextDouble();
-        boolean boolValue = sc.nextBoolean();
-        
-        // Calculate integer × double
-        double result = intValue * doubleValue;
-        
-        // If boolean is false, multiply by -1
-        if (!boolValue) {
-            result = result * -1;
-        }
-        
-        // Print with 2 decimal places
-        System.out.printf("%.2f%n", result);
+        Soal5Repository.execute(sc);
     }
 }

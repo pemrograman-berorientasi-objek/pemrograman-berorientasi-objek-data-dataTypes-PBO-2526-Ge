@@ -5,7 +5,7 @@ SCORE=0
 FEEDBACK=""
 
 # ---------- Compile ----------
-if javac src/Main.java 2> compile_error.txt; then
+if javac src/*.java 2> compile_error.txt; then
   SCORE=$((SCORE + 5))
 else
   echo "❌ Compile error"
