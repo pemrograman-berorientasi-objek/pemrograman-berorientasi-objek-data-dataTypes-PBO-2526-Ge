@@ -29,10 +29,11 @@ public class Main {
             // Auto-detect based on input pattern (for test.sh)
             if (tokens.length == 1) {
                 // Single token - could be Soal3 (int) or Soal4 (string)
-                try {
-                    int n = Integer.parseInt(tokens[0]);
+                if (tokens[0].matches("-?\\d+")) {
+                    // It's an integer
                     executeSoal3(new Scanner(line));
-                } catch (NumberFormatException e) {
+                } else {
+                    // It's a string
                     executeSoal4(new Scanner(line));
                 }
             } else if (tokens.length == 2) {
